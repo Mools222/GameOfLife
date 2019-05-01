@@ -191,11 +191,11 @@ public class Game extends Application {
                     cells[i][j].setLivingNeighbours(0);
                     if (i >= 1)
                         cells[i][j].setLivingNeighbours(cells[i][j].getLivingNeighbours() + (cells[i - 1][j].isAlive() ? 1 : 0)); // N
-                    if (i >= 1 && j < cells.length - 1)
+                    if (i >= 1 && j < cells[i].length - 1)
                         cells[i][j].setLivingNeighbours(cells[i][j].getLivingNeighbours() + (cells[i - 1][j + 1].isAlive() ? 1 : 0)); // NE
-                    if (j < cells.length - 1)
+                    if (j < cells[i].length - 1)
                         cells[i][j].setLivingNeighbours(cells[i][j].getLivingNeighbours() + (cells[i][j + 1].isAlive() ? 1 : 0)); // E
-                    if (i < cells.length - 1 && j < cells.length - 1)
+                    if (i < cells.length - 1 && j < cells[i].length - 1)
                         cells[i][j].setLivingNeighbours(cells[i][j].getLivingNeighbours() + (cells[i + 1][j + 1].isAlive() ? 1 : 0)); // SE
                     if (i < cells.length - 1)
                         cells[i][j].setLivingNeighbours(cells[i][j].getLivingNeighbours() + (cells[i + 1][j].isAlive() ? 1 : 0)); // S
